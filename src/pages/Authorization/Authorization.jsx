@@ -4,6 +4,8 @@ import { authUser } from '../../api/user.js';
 export const Authorization = ({ onUserChange }) => {
   const [userName, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -14,7 +16,15 @@ export const Authorization = ({ onUserChange }) => {
         setUsername('');
         setPassword('');
       })
-      .catch(console.log);
+      .catch(() => handleError(
+        'Username or password is incorrect!'
+      ));
+  }
+
+  const handleError = (errorMessage) => {
+    setErrorMessage(prevState => errorMessage);
+
+    setTimeout(() => setErrorMessage(''), 3000);
   }
 
   return (
@@ -63,6 +73,13 @@ export const Authorization = ({ onUserChange }) => {
               </button>
             </p>
           </div>
+
+          {errorMessage && (
+            <div className="notification is-danger">
+              <button className="delete" onClick={() => setErrorMessage('')}></button>
+              {errorMessage}
+            </div>
+          )}
         </form>
       </div>
     </div>
