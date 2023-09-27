@@ -1,3 +1,6 @@
+const Assigment = require("../classes/Assigment");
+const tests = require("../tempdata/tests");
+
 const checkAnswers = (quiz, answers) => {
   return quiz.reduce((acc, question) => {
     if (answers[question.question] === question.rightAnswer) {
@@ -8,6 +11,13 @@ const checkAnswers = (quiz, answers) => {
   }, 0)
 }
 
+const getDefaultTest = () => {
+  return tests
+    .filter(test => test.isAvailableFromStart)
+    .map(test => new Assigment(test));
+}
+
 module.exports = {
   checkAnswers,
+  getDefaultTest,
 }

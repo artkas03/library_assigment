@@ -1,7 +1,10 @@
 const User = require('../classes/User.js');
+const { getDefaultTest } = require('../utils/functions.js');
 
-const testUser = new User('Artem', 'test', 'test');
-const testUser2 = new User('Georg', 'test2', 'test2');
+const defaultTests = getDefaultTest();
+
+const testUser = new User('Artem', 'test', 'test', defaultTests);
+const testUser2 = new User('Georg', 'test2', 'test2', defaultTests);
 
 const users = [
   testUser,
