@@ -11,7 +11,7 @@ const checkAnswers = (quiz, answers) => {
   }, 0)
 }
 
-const getDefaultTest = () => {
+const getDefaultAssigments = () => {
   return tests
     .filter(test => test.isAvailableFromStart)
     .map(test => new Assigment(test));
@@ -19,5 +19,5 @@ const getDefaultTest = () => {
 
 module.exports = {
   checkAnswers,
-  getDefaultTest,
+  getDefaultAssigments,
 }
