@@ -33,7 +33,6 @@ app.get('/assigments', (req, res) => {
     }
 
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
     res.send(user.assigmentStore);
   } catch (error) {
     res.statusCode = 404;
@@ -52,7 +51,7 @@ app.post('/assigmentcheck', express.json(), (req, res) => {
       throw new Error();
     }
 
-    const userAssigment = user.assigmentStore.assigments.find(assigment => {
+    const userAssigment = user.assigmentStore.find(assigment => {
       return assigment.assignedTest.id === testId;
     });
 
