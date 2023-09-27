@@ -34,7 +34,7 @@ app.get('/assigments', (req, res) => {
 
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    res.send(user.assigmentStore.assigments);
+    res.send(user.assigmentStore);
   } catch (error) {
     res.statusCode = 404;
     res.send('There is no users with such ID.');
