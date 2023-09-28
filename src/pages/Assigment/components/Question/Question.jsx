@@ -24,6 +24,7 @@ export default function Question({
                 key={option}
               >
                 <input 
+                  className='question__block-item'
                   type="radio" 
                   name={question.question}
                   value={index}

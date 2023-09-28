@@ -1,6 +1,15 @@
 # Library Assigment
 
-## [PREVIW LINK](https://artkas03.github.io/library_assigment/)
+## [PREVIEW LINK](https://artkas03.github.io/library_assigment/)
+
+### **WARNING**
+
+The first login can take some time due to the server being turned off in case no requests were sent recently(~5-10min)
+
+### Branches
+
+- client-side - Frontend part of the application
+- server-side - API of the application
 
 ### Application functionality
 - Authorization
